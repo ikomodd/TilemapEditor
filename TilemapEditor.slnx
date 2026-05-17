@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="TilemapEditor/TilemapEditor.vcxproj" Id="5a173d47-f6cc-4d75-af96-f9ff86c2de9f" />
+</Solution>
