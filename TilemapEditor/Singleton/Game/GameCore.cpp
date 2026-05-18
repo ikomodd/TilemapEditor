@@ -24,6 +24,10 @@ void GAME_GameCore::_Process(float delta) {
 	for (GAME_Node* node : FullChildren) {
 
 		node->_Process(0);
+
+		auto* Node2D = dynamic_cast<GAME_Node2D*>(node);
+		if (Node2D)
+			Node2D->UpdateLocalPosition();
 	}
 }
 

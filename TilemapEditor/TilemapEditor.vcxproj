@@ -129,9 +129,13 @@
   <ItemGroup>
     <ClCompile Include="..\..\OnlineGame\OnlineGame\KMD\DataModels\Vector2.cpp" />
     <ClCompile Include="Inheritances\Children\Children.cpp" />
+    <ClCompile Include="Inheritances\SpriteData\SpriteData.cpp" />
     <ClCompile Include="Inheritances\Transform\Transform.cpp" />
+    <ClCompile Include="Node\Camera2D\Camera2D.cpp" />
     <ClCompile Include="Node\Origin\Origin.cpp" />
+    <ClCompile Include="Node\Sprite2D\Sprite2D.cpp" />
     <ClCompile Include="Scenes\Editor\EditorScene.cpp" />
+    <ClCompile Include="Singleton\Asset\AssetCore.cpp" />
     <ClCompile Include="Singleton\Display\DisplayCore.cpp" />
     <ClCompile Include="Singleton\Game\GameCore.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -141,11 +145,15 @@
     <ClInclude Include="..\..\OnlineGame\OnlineGame\KMD\DataModels\ivector2.h" />
     <ClInclude Include="..\..\OnlineGame\OnlineGame\KMD\DataModels\Vector2.h" />
     <ClInclude Include="Inheritances\Children\Children.h" />
+    <ClInclude Include="Inheritances\SpriteData\SpriteData.h" />
     <ClInclude Include="Inheritances\Transform\Transform.h" />
+    <ClInclude Include="Node\Camera2D\Camera2D.h" />
     <ClInclude Include="Node\Node.h" />
     <ClInclude Include="Node\Node2D\Node2D.h" />
     <ClInclude Include="Node\Origin\Origin.h" />
+    <ClInclude Include="Node\Sprite2D\Sprite2D.h" />
     <ClInclude Include="Scenes\Editor\EditorScene.h" />
+    <ClInclude Include="Singleton\Asset\AssetCore.h" />
     <ClInclude Include="Singleton\Display\DisplayCore.h" />
     <ClInclude Include="Singleton\Game\GameCore.h" />
     <ClInclude Include="Singleton\Singleton.h" />

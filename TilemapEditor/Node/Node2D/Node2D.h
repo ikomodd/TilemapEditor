@@ -13,9 +13,4 @@ public:
 		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 		SDL_RenderPoint(renderer, GlobalPosition.X, GlobalPosition.Y);
 	}
-
-	void _Process(float delta) {
-
-		UpdateLocalPosition();
-	}
 };

@@ -7,8 +7,12 @@
 #include "../../DataModels/Vector2/Vector2.h"
 #include "../../DataModels/Color/Color4.h"
 
+class GAME_Camera2D;
+
 class GAME_DisplayCore : public CORE_Singleton<GAME_DisplayCore> {
 public:
+
+	GAME_Camera2D* CurrentCamera = nullptr;
 
 	SDL_Window* Window = nullptr;
 	SDL_Renderer* Renderer = nullptr;
