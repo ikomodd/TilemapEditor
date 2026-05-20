@@ -24,6 +24,7 @@ public:
 	//
 
 	static std::vector<CORE_iSingleton*>& GetSingletons() {
+
 		static std::vector<CORE_iSingleton*> Singletons;
 		return Singletons;
 	}

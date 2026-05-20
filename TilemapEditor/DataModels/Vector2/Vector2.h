@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+struct ivector2;
+
 struct vector2 {
 
 	inline static float EpsValue = 0.003f;
@@ -103,6 +105,8 @@ struct vector2 {
 	float Magnitude() const;
 	vector2 Normalize() const;
 	vector2 Lerp(vector2 end, float alpha);
+	vector2 Floor();
 
 	std::string ToString();
+	ivector2 ToiVector2();
 };

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../Node.h"
-#include "../../Inheritances/Transform/Transform.h"
+#include "../../Inheritance/Transform/Transform.h"
 
 class GAME_Node2D : public GAME_Node, public GAME_Transform {
 public:

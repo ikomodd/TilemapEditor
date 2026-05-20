@@ -21,16 +21,13 @@
     <ClCompile Include="Singleton\Game\GameCore.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\OnlineGame\OnlineGame\KMD\DataModels\Vector2.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
     <ClCompile Include="Singleton\Display\DisplayCore.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Singleton\Scene\SceneCore.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Inheritances\Children\Children.cpp">
+    <ClCompile Include="Inheritance\Children\Children.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Node\Origin\Origin.cpp">
@@ -39,19 +36,25 @@
     <ClCompile Include="Scenes\Editor\EditorScene.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Inheritances\Transform\Transform.cpp">
+    <ClCompile Include="Inheritance\Transform\Transform.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Singleton\Asset\AssetCore.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Inheritances\SpriteData\SpriteData.cpp">
+    <ClCompile Include="Inheritance\SpriteData\SpriteData.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Node\Sprite2D\Sprite2D.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Node\Camera2D\Camera2D.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor\Tilemap\Tilemap.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="DataModels\Vector2\Vector2.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
@@ -68,9 +71,6 @@
     <ClInclude Include="..\..\OnlineGame\OnlineGame\KMD\DataModels\ivector2.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\OnlineGame\OnlineGame\KMD\DataModels\Vector2.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
     <ClInclude Include="Singleton\Scene\SceneCore.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
@@ -83,25 +83,37 @@
     <ClInclude Include="Node\Origin\Origin.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Inheritances\Children\Children.h">
+    <ClInclude Include="Inheritance\Children\Children.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Scenes\Editor\EditorScene.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Inheritances\Transform\Transform.h">
+    <ClInclude Include="Inheritance\Transform\Transform.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Singleton\Asset\AssetCore.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Inheritances\SpriteData\SpriteData.h">
+    <ClInclude Include="Inheritance\SpriteData\SpriteData.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Node\Sprite2D\Sprite2D.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Node\Camera2D\Camera2D.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor\Tilemap\Tilemap.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="DataModels\Vector2\Vector2.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="DataModels\Vector2\iVector2.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="DataModels\Color\Color4.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>

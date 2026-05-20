@@ -7,5 +7,6 @@ public:
 
 	GAME_Camera2D(std::string name, vector2 position, vector2 size, vector2 offset);
 
-	SDL_FRect InCameraView (SDL_FRect rect);
+	SDL_FRect InCameraView(SDL_FRect rect);
+	vector2 InWorldSpace(vector2 position);
 };

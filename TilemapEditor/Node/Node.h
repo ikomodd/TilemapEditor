@@ -3,7 +3,7 @@
 #include <string>
 #include <SDL3/SDL.h>
 
-#include "../Inheritances/Children/Children.h"
+#include "../Inheritance/Children/Children.h"
 
 class GAME_Node : public GAME_Children {
 public:

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../Node2D/Node2D.h"
-#include "../../Inheritances/SpriteData/SpriteData.h"
+#include "../../Inheritance/SpriteData/SpriteData.h"
 
 class GAME_Sprite2D : public GAME_Node2D, public GAME_SpriteData {
 public:

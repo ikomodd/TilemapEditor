@@ -16,6 +16,12 @@ void GAME_GameCore::_Event(SDL_Event& event) {
 
 	if (event.type == SDL_EVENT_QUIT)
 		Running = false;
+
+	auto FullChildren = GAME_SceneCore::Get().CurrentScene->GetFullChildren();
+	for (GAME_Node* node : FullChildren) {
+
+		node->_Event(event);
+	}
 }
 
 void GAME_GameCore::_Process(float delta) {
@@ -28,6 +34,7 @@ void GAME_GameCore::_Process(float delta) {
 		auto* Node2D = dynamic_cast<GAME_Node2D*>(node);
 		if (Node2D)
 			Node2D->UpdateLocalPosition();
+
 	}
 }
 

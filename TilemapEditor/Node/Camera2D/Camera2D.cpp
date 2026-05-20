@@ -35,3 +35,15 @@ SDL_FRect GAME_Camera2D::InCameraView(SDL_FRect rect) {
 
 	return Result;
 }
+
+vector2 GAME_Camera2D::InWorldSpace(vector2 position) {
+
+	GAME_DisplayCore& Display = GAME_DisplayCore::Get();
+
+	vector2 WindowCenter = Display.WindowSize / 2.f;
+	vector2 OffsetPosition = GlobalPosition + Display.WindowSize * Offset;
+
+	vector2 Result = (position + OffsetPosition) - WindowCenter;
+
+	return Result;
+}

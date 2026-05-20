@@ -127,10 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\OnlineGame\OnlineGame\KMD\DataModels\Vector2.cpp" />
-    <ClCompile Include="Inheritances\Children\Children.cpp" />
-    <ClCompile Include="Inheritances\SpriteData\SpriteData.cpp" />
-    <ClCompile Include="Inheritances\Transform\Transform.cpp" />
+    <ClCompile Include="Actor\Tilemap\Tilemap.cpp" />
+    <ClCompile Include="DataModels\Vector2\Vector2.cpp" />
+    <ClCompile Include="Inheritance\Children\Children.cpp" />
+    <ClCompile Include="Inheritance\SpriteData\SpriteData.cpp" />
+    <ClCompile Include="Inheritance\Transform\Transform.cpp" />
     <ClCompile Include="Node\Camera2D\Camera2D.cpp" />
     <ClCompile Include="Node\Origin\Origin.cpp" />
     <ClCompile Include="Node\Sprite2D\Sprite2D.cpp" />
@@ -143,10 +144,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\OnlineGame\OnlineGame\KMD\DataModels\ivector2.h" />
-    <ClInclude Include="..\..\OnlineGame\OnlineGame\KMD\DataModels\Vector2.h" />
-    <ClInclude Include="Inheritances\Children\Children.h" />
-    <ClInclude Include="Inheritances\SpriteData\SpriteData.h" />
-    <ClInclude Include="Inheritances\Transform\Transform.h" />
+    <ClInclude Include="Actor\Tilemap\Tilemap.h" />
+    <ClInclude Include="DataModels\Color\Color4.h" />
+    <ClInclude Include="DataModels\Vector2\iVector2.h" />
+    <ClInclude Include="DataModels\Vector2\Vector2.h" />
+    <ClInclude Include="Inheritance\Children\Children.h" />
+    <ClInclude Include="Inheritance\SpriteData\SpriteData.h" />
+    <ClInclude Include="Inheritance\Transform\Transform.h" />
     <ClInclude Include="Node\Camera2D\Camera2D.h" />
     <ClInclude Include="Node\Node.h" />
     <ClInclude Include="Node\Node2D\Node2D.h" />
