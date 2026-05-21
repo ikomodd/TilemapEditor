@@ -105,6 +105,7 @@ struct vector2 {
 	float Magnitude() const;
 	vector2 Normalize() const;
 	vector2 Lerp(vector2 end, float alpha);
+	vector2 Clamp(vector2 min, vector2 max);
 	vector2 Floor();
 
 	std::string ToString();

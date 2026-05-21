@@ -43,7 +43,41 @@ vector2 GAME_Camera2D::InWorldSpace(vector2 position) {
 	vector2 WindowCenter = Display.WindowSize / 2.f;
 	vector2 OffsetPosition = GlobalPosition + Display.WindowSize * Offset;
 
-	vector2 Result = (position + OffsetPosition) - WindowCenter;
+	vector2 Result = (position - WindowCenter) / Size + OffsetPosition;
 
 	return Result;
+}
+
+void GAME_Camera2D::_Event(SDL_Event& event) {
+
+	if (event.button.button == SDL_BUTTON_MIDDLE) {
+		if (event.type == SDL_EVENT_MOUSE_BUTTON_DOWN) {
+
+			PrevMousePosition = vector2(event.button.x, event.button.y);
+
+			Moving = true;
+		}
+		else if (event.type == SDL_EVENT_MOUSE_BUTTON_UP) {
+
+			Moving = false;
+		}
+	}
+	if (event.type == SDL_EVENT_MOUSE_MOTION && Moving) {
+		
+		vector2 CurrentMousePosition = vector2(event.motion.x, event.motion.y);
+		vector2 MouseDelta = (CurrentMousePosition - PrevMousePosition) / Size;
+
+		PrevMousePosition = CurrentMousePosition;
+
+		LocalPosition -= MouseDelta;
+
+		std::cout << GlobalPosition.ToString() << "\n";
+	}
+	if (event.type == SDL_EVENT_MOUSE_WHEEL) {
+		
+		float Direction = event.wheel.y * 0.1f;
+
+		Size += vector2(Direction, Direction);
+		Size = Size.Clamp(vector2(0.1f, 0.1f), vector2(5.0f, 5.0f));
+	}
 }

@@ -2,6 +2,7 @@
 #include  "iVector2.h"
 
 #include <string>
+#include <algorithm>
 
 #include <math.h>
 
@@ -47,8 +48,13 @@ vector2 vector2::Lerp(vector2 end, float alpha) {
 	};
 }
 
-vector2 vector2::Floor()
-{
+vector2 vector2::Clamp(vector2 min, vector2 max) {
+
+	return vector2(std::clamp(X, min.X, max.X), std::clamp(Y, min.Y, max.Y));
+}
+
+vector2 vector2::Floor() {
+
 	return vector2(std::floor(X), std::floor(Y));
 }
 
