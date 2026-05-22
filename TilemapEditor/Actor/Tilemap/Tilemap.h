@@ -19,16 +19,22 @@ public:
 	unsigned int Id;
 	vector2 SourcePosition;
 
+	color4 Color = 0;
+
 	TILEMAP_Tile(vector2 source_position) : Id(PrevId++), SourcePosition(source_position) {}
 };
 
 class GAME_Tilemap : public GAME_Node, public GAME_SpriteData {
 private:
 
-	GAME_Camera2D* CurrentCamera;
+	GAME_Camera2D* CurrentCamera = nullptr;
 
 	bool Drawing = false;
 	bool Erasing = false;
+
+	int CurrentTileId = 1;
+
+	vector2 PrevMousePosition = 0;
 
 	vector2 TileSize = vector2(32.f, 32.f);
 
@@ -37,17 +43,18 @@ private:
 
 	std::vector<TILEMAP_Tile*> Tiles = {};
 
-	TILEMAP_Tile* CurrentTile = nullptr;
-
 public:
 
 	GAME_Tilemap() : GAME_Node("tilemap"), GAME_SpriteData("") {}
 
 	void CreateTile(vector2 source_position);
 
-	void PreDrawTile(vector2 position);
-	void DrawTiles();
-	void EraseTile(vector2 position);
+	void DrawLine(vector2 from, vector2 to);
+
+	void DrawTile(ivector2 position);
+	void InsertTiles();
+
+	//
 
 	void _Ready() override;
 	void _Event(SDL_Event& event) override;

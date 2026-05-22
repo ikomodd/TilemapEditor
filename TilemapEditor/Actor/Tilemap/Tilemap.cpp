@@ -3,52 +3,65 @@
 #include "../../Singleton/Display/DisplayCore.h"
 #include "../../Node/Camera2D/Camera2D.h"
 
+// OBS: Os std::cout's causam queda de FPS, usa só pra debug e comenta eles no final
+
 void GAME_Tilemap::CreateTile(vector2 source_position) {
 
 	auto* Tile = new TILEMAP_Tile(source_position);
 	Tiles.push_back(Tile);
 }
 
-void GAME_Tilemap::PreDrawTile(vector2 position) {
+void GAME_Tilemap::DrawLine(vector2 from, vector2 to) {
 
-	vector2 WorldPosition = CurrentCamera->InWorldSpace(position);
-	ivector2 GridPosition = (WorldPosition / TileSize).ToiVector2();
+	vector2 ToWorldPosition = CurrentCamera->InWorldSpace(to);
+	vector2 ToGridPosition = (ToWorldPosition / TileSize);
 
-	PreTilemap[GridPosition] = 0; // 0 só pra debug, o certo é CurrentTilemap->Id
+	vector2 FromWorldPosition = CurrentCamera->InWorldSpace(from);
+	vector2 FromGridPosition = (FromWorldPosition / TileSize);
 
-	std::cout << "PreDraw: " << PreTilemap.size() << "\n";
+	vector2 Delta = ToGridPosition - FromGridPosition;
+	float Distance = sqrt(Delta.X * Delta.X + Delta.Y * Delta.Y);
+
+	int Steps = (int)Distance + 1;
+
+	for (int i = 0; i <= Steps; i++) {
+
+		float t = (float)i / Steps;
+		vector2 Pos = FromGridPosition + Delta * t;
+		
+		DrawTile(Pos.ToiVector2());
+	}
 }
 
-void GAME_Tilemap::DrawTiles() {
+void GAME_Tilemap::DrawTile(ivector2 position) {
 
-	for (auto current_tile : PreTilemap) {
+	PreTilemap[position] = CurrentTileId;
 
-		Tilemap[current_tile.first] = current_tile.second;
+	//std::cout << "PreDraw: " << PreTilemap.size() << "\n";
+}
+
+void GAME_Tilemap::InsertTiles() {
+
+	for (auto it = PreTilemap.begin(); it != PreTilemap.end(); it++) {
+
+		if (Drawing)
+			Tilemap[it->first] = it->second;
+
+		if (Erasing) {
+
+			for (auto it2 = Tilemap.begin(); it2 != Tilemap.end(); ) {
+
+				if (it2->first == it->first)
+
+					it2 = Tilemap.erase(it2);
+				else
+					++it2;
+			}
+		};
 	}
 	PreTilemap.clear();
 
 	std::cout << "Draw: " << Tilemap.size() << "\n";
-}
-
-void GAME_Tilemap::EraseTile(vector2 position) {
-
-	vector2 WorldPosition = CurrentCamera->InWorldSpace(position);
-	ivector2 GridPosition = (WorldPosition / TileSize).ToiVector2();
-
-	if (Tilemap.contains(GridPosition)) {
-
-		for (auto it = Tilemap.begin(); it != Tilemap.end(); ) {
-
-			if (it->first == GridPosition) {
-				Tilemap.erase(it);
-				break;
-			}
-			else
-				it++;
-		}
-	}
-
-	std::cout << "Erase: " << Tilemap.size() << "\n";
 }
 
 //
@@ -62,10 +75,15 @@ void GAME_Tilemap::_Event(SDL_Event& event) {
 
 	if (event.type == SDL_EVENT_MOUSE_BUTTON_DOWN) {
 
+		vector2 MousePosition = vector2(event.button.x, event.button.y);
+		PrevMousePosition = MousePosition;
+
 		if (event.button.button == SDL_BUTTON_LEFT) {
-			PreDrawTile(vector2(event.button.x, event.button.y));
+
+			DrawLine(PrevMousePosition, MousePosition);
 			Drawing = true;
 		}
+
 		else if (event.button.button == SDL_BUTTON_RIGHT) {
 
 			if (PreTilemap.size() > 0) {
@@ -74,25 +92,29 @@ void GAME_Tilemap::_Event(SDL_Event& event) {
 				Drawing = false;
 			}
 			else {
-				EraseTile(vector2(event.button.x, event.button.y));
+
+				DrawLine(PrevMousePosition, MousePosition);
 				Erasing = true;
 			}
 		}
-
 	}
+
 	else if (event.type == SDL_EVENT_MOUSE_BUTTON_UP) {
 		
 		if (PreTilemap.size() > 0)
-			DrawTiles();
+			InsertTiles();
 
 		Drawing = false;
 		Erasing = false;
 	}
 	else if (event.type == SDL_EVENT_MOUSE_MOTION) {
-		if (Drawing == true)
-			PreDrawTile(vector2(event.motion.x, event.motion.y));
-		else if (Erasing == true)
-			EraseTile(vector2(event.motion.x, event.motion.y));
+
+		vector2 MousePosition = vector2(event.button.x, event.button.y);
+
+		if (Drawing || Erasing)
+			DrawLine(PrevMousePosition, MousePosition);
+
+		PrevMousePosition = MousePosition;
 	}
 }
 

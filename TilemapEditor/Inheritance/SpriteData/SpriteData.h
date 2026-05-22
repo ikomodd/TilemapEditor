@@ -3,6 +3,8 @@
 #include <iostream>
 #include <SDL3/SDL.h>
 
+#include "../../DataModels/Color/Color4.h"
+
 class GAME_SpriteData {
 public:
 	

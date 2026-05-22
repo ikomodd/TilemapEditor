@@ -14,6 +14,10 @@ struct vector2 {
 
 	vector2(float x = 0, float y = 0) : X(x), Y(y) {};
 
+	vector2(float all) : X(all), Y(all) {}
+	vector2(int all) : X((float)all), Y((float)all) {}
+
+
 	// Soma
 	
 	vector2 operator + (const vector2& other) const {

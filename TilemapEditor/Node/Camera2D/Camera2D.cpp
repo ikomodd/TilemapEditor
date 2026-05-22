@@ -70,8 +70,6 @@ void GAME_Camera2D::_Event(SDL_Event& event) {
 		PrevMousePosition = CurrentMousePosition;
 
 		LocalPosition -= MouseDelta;
-
-		std::cout << GlobalPosition.ToString() << "\n";
 	}
 	if (event.type == SDL_EVENT_MOUSE_WHEEL) {
 		
