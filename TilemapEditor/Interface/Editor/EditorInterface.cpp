@@ -1,15 +1,17 @@
 #include "EditorInterface.h"
 
-#include "../../Node/Frame2D/Frame2D.h"
+#include "../../Node/Frame2D/Panel2D/Panel2D.h"
 
 void GAME_EditorInterface::_Ready() {
 
-	auto* Frame = new GAME_Frame2D("test_frame", 0, vector2(0.1f, 0.1f), 0);
-	AddNode(Frame);
+	auto* UpperPanel = new GAME_Panel2D("upper_panel", "", 0, vector2(1.f, 0.05f), 0, 200, 150, 1.f);
+	AddNode(UpperPanel);
 
-	auto* Frame2 = new GAME_Frame2D("test_frame2", vector2(1.f, 1.f), vector2(0.1f, 0.1f), vector2(-1.f, -1.f));
-	AddNode(Frame2);
+	auto* LeftPanel = new GAME_Panel2D("left_panel", "", vector2(0.f, 0.05f), vector2(0.2f, 0.95f), vector2(0.f, 0.f), 200, 150, 1.f);
+	AddNode(LeftPanel);
 
-	auto* Frame3 = new GAME_Frame2D("test_frame3", 0, vector2(0.1f, 0.1f), vector2(-1.f, -1.f));
-	Frame2->AddNode(Frame3);
+	auto* RightPanel = new GAME_Panel2D("right_panel", "", vector2(1.f, 0.05f), vector2(0.2f, 0.95f), vector2(-1.f, 0.f), 200, 150, 1.f);
+	AddNode(RightPanel);
+
+
 }

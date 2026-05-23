@@ -135,6 +135,7 @@
     <ClCompile Include="Inheritance\Transform\UiTransform\UiTransform.cpp" />
     <ClCompile Include="Interface\Editor\EditorInterface.cpp" />
     <ClCompile Include="Node\Camera2D\Camera2D.cpp" />
+    <ClCompile Include="Node\Frame2D\Panel2D\Panel2D.cpp" />
     <ClCompile Include="Node\Origin\Origin.cpp" />
     <ClCompile Include="Node\Sprite2D\Sprite2D.cpp" />
     <ClCompile Include="Scenes\Editor\EditorScene.cpp" />
@@ -158,6 +159,7 @@
     <ClInclude Include="Interface\Editor\EditorInterface.h" />
     <ClInclude Include="Node\Camera2D\Camera2D.h" />
     <ClInclude Include="Node\Frame2D\Frame2D.h" />
+    <ClInclude Include="Node\Frame2D\Panel2D\Panel2D.h" />
     <ClInclude Include="Node\Node.h" />
     <ClInclude Include="Node\Node2D\Node2D.h" />
     <ClInclude Include="Node\Origin\Origin.h" />

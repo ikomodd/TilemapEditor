@@ -29,6 +29,15 @@ void GAME_DisplayCore::_Event(SDL_Event& event) {
 
 	if (event.type == SDL_EVENT_WINDOW_RESIZED)
 		ConfigureWindowSize();
+
+	else if (event.type == SDL_EVENT_KEY_DOWN) {
+
+		if (event.key.key == SDLK_F11) {
+
+			Fullscreen = !Fullscreen;
+			SDL_SetWindowFullscreen(Window, Fullscreen);
+		}
+	}
 }
 
 void GAME_DisplayCore::_Process(float delta) {
@@ -39,8 +48,8 @@ void GAME_DisplayCore::_Process(float delta) {
 	auto FullInterfaceChildren = GAME_InterfaceCore::Get().CurrentOrigin->GetFullChildren();
 	auto FullSceneChildren = GAME_SceneCore::Get().CurrentOrigin->GetFullChildren();
 
-	std::vector<GAME_Node*> AllNodes = FullInterfaceChildren;
-	AllNodes.insert(AllNodes.end(), FullSceneChildren.begin(), FullSceneChildren.end());
+	std::vector<GAME_Node*> AllNodes = FullSceneChildren;
+	AllNodes.insert(AllNodes.end(), FullInterfaceChildren.begin(), FullInterfaceChildren.end());
 
 	for (GAME_Node* node : AllNodes) {
 

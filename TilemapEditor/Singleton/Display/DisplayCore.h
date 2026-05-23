@@ -21,6 +21,8 @@ public:
 
 	vector2 WindowSize;
 
+	bool Fullscreen = false;
+
 private:
 
 	GAME_DisplayCore() : CORE_Singleton("DisplayCore", 1) {}

@@ -11,7 +11,9 @@ public:
 	SDL_Texture* Texture;
 	SDL_Surface* Surface;
 
-	GAME_SpriteData(std::string path) {
+	color4 SolidColor;
+
+	GAME_SpriteData(std::string path, color4 solid_color = color4(255)) : SolidColor(solid_color) {
 
 		ChangeTexture(path);
 	}
