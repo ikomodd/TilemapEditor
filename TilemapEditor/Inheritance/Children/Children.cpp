@@ -1,6 +1,6 @@
 #include "Children.h"
 
-#include "../../Singleton/Scene/SceneCore.h" // CurrentScene
+#include "../../Singleton/Origin/Scene/SceneCore.h" // CurrentScene
 #include "../../Node/Origin/Origin.h"
 
 #include "../../Node/Node.h"
@@ -22,7 +22,7 @@ void GAME_Children::AddNode(GAME_Node* node) {
 		Children.push_back(node);
 		node->Parent = Owner;
 
-		if (GAME_SceneCore::Get().CurrentScene->Initialized)
+		if (GAME_SceneCore::Get().CurrentOrigin->Initialized)
 			node->_Ready();
 	}
 	else

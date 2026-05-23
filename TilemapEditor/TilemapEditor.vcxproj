@@ -140,7 +140,7 @@
     <ClCompile Include="Singleton\Display\DisplayCore.cpp" />
     <ClCompile Include="Singleton\Game\GameCore.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Singleton\Scene\SceneCore.cpp" />
+    <ClCompile Include="Singleton\Origin\OriginCore.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\OnlineGame\OnlineGame\KMD\DataModels\ivector2.h" />
@@ -151,6 +151,7 @@
     <ClInclude Include="Inheritance\Children\Children.h" />
     <ClInclude Include="Inheritance\SpriteData\SpriteData.h" />
     <ClInclude Include="Inheritance\Transform\Transform.h" />
+    <ClInclude Include="Interface\Editor\EditorInterface.h" />
     <ClInclude Include="Node\Camera2D\Camera2D.h" />
     <ClInclude Include="Node\Node.h" />
     <ClInclude Include="Node\Node2D\Node2D.h" />
@@ -160,8 +161,10 @@
     <ClInclude Include="Singleton\Asset\AssetCore.h" />
     <ClInclude Include="Singleton\Display\DisplayCore.h" />
     <ClInclude Include="Singleton\Game\GameCore.h" />
+    <ClInclude Include="Singleton\Origin\Interface\InterfaceCore.h" />
+    <ClInclude Include="Singleton\Origin\OriginCore.h" />
     <ClInclude Include="Singleton\Singleton.h" />
-    <ClInclude Include="Singleton\Scene\SceneCore.h" />
+    <ClInclude Include="Singleton\Origin\Scene\SceneCore.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

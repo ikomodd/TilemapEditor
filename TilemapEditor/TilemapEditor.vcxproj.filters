@@ -24,9 +24,6 @@
     <ClCompile Include="Singleton\Display\DisplayCore.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Singleton\Scene\SceneCore.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
     <ClCompile Include="Inheritance\Children\Children.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
@@ -57,6 +54,9 @@
     <ClCompile Include="DataModels\Vector2\Vector2.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
+    <ClCompile Include="Singleton\Origin\OriginCore.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Singleton\Singleton.h">
@@ -71,7 +71,7 @@
     <ClInclude Include="..\..\OnlineGame\OnlineGame\KMD\DataModels\ivector2.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Singleton\Scene\SceneCore.h">
+    <ClInclude Include="Singleton\Origin\Scene\SceneCore.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Node\Node.h">
@@ -114,6 +114,15 @@
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="DataModels\Color\Color4.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton\Origin\Interface\InterfaceCore.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton\Origin\OriginCore.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\Editor\EditorInterface.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>

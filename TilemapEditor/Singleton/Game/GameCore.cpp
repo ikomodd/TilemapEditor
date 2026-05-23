@@ -1,7 +1,8 @@
 #include "GameCore.h"
 
 #include "../Display/DisplayCore.h"
-#include "../Scene/SceneCore.h"
+#include "../Origin/Scene/SceneCore.h"
+#include "../Origin/Interface/InterfaceCore.h"
 
 #include "../../Node/Origin/Origin.h"
 #include "../../Node/Node.h"
@@ -17,8 +18,13 @@ void GAME_GameCore::_Event(SDL_Event& event) {
 	if (event.type == SDL_EVENT_QUIT)
 		Running = false;
 
-	auto FullChildren = GAME_SceneCore::Get().CurrentScene->GetFullChildren();
-	for (GAME_Node* node : FullChildren) {
+	auto FullInterfaceChildren = GAME_InterfaceCore::Get().CurrentOrigin->GetFullChildren();
+	auto FullSceneChildren = GAME_SceneCore::Get().CurrentOrigin->GetFullChildren();
+
+	std::vector<GAME_Node*> AllNodes = FullInterfaceChildren;
+	AllNodes.insert(AllNodes.end(), FullSceneChildren.begin(), FullSceneChildren.end());
+
+	for (GAME_Node* node : AllNodes) {
 
 		node->_Event(event);
 	}
@@ -26,15 +32,19 @@ void GAME_GameCore::_Event(SDL_Event& event) {
 
 void GAME_GameCore::_Process(float delta) {
 
-	auto FullChildren = GAME_SceneCore::Get().CurrentScene->GetFullChildren();
-	for (GAME_Node* node : FullChildren) {
+	auto FullInterfaceChildren = GAME_InterfaceCore::Get().CurrentOrigin->GetFullChildren();
+	auto FullSceneChildren = GAME_SceneCore::Get().CurrentOrigin->GetFullChildren();
+
+	std::vector<GAME_Node*> AllNodes = FullInterfaceChildren;
+	AllNodes.insert(AllNodes.end(), FullSceneChildren.begin(), FullSceneChildren.end());
+
+	for (GAME_Node* node : AllNodes) {
 
 		node->_Process(0);
 
 		auto* Node2D = dynamic_cast<GAME_Node2D*>(node);
 		if (Node2D)
 			Node2D->UpdateLocalPosition();
-
 	}
 }
 

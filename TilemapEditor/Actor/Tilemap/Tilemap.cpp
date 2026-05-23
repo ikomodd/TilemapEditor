@@ -35,9 +35,10 @@ void GAME_Tilemap::DrawLine(vector2 from, vector2 to) {
 
 void GAME_Tilemap::DrawTile(ivector2 position) {
 
-	PreTilemap[position] = CurrentTileId;
-
-	//std::cout << "PreDraw: " << PreTilemap.size() << "\n";
+	if (Erasing)
+		PreTilemap[position] = 0;
+	else
+		PreTilemap[position] = CurrentTileId;
 }
 
 void GAME_Tilemap::InsertTiles() {
@@ -120,15 +121,23 @@ void GAME_Tilemap::_Event(SDL_Event& event) {
 
 void GAME_Tilemap::_Draw(SDL_Renderer* renderer) {
 
-	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-
 	auto* Camera = GAME_DisplayCore::Get().CurrentCamera;
 
+	// Uni PreTiemap e Tilemap em AllTiles
 	std::map <ivector2, unsigned int> AllTiles = Tilemap;
-	for (auto current_tile : PreTilemap)
-		AllTiles[current_tile.first] = current_tile.second;
 
+	for (auto current_tile : PreTilemap) {
+
+		AllTiles[current_tile.first] = current_tile.second;
+	}
+
+	// Renderiza cada tile
 	for (auto current_tile : AllTiles) {
+
+		if (current_tile.second == 0)
+			SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+		else
+			SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 
 		SDL_FRect TileRect = { current_tile.first.X * TileSize.X, current_tile.first.Y * TileSize.Y, TileSize.X, TileSize.Y };
 

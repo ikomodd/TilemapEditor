@@ -1,6 +1,6 @@
 #include "DisplayCore.h"
 
-#include "../Scene/SceneCore.h"
+#include "../Origin/Scene/SceneCore.h"
 #include "../../Node/Node.h"
 #include "../../Node/Origin/Origin.h"
 
@@ -34,7 +34,7 @@ void GAME_DisplayCore::_Process(float delta) {
 	SDL_SetRenderDrawColor(Renderer, BackgroundColor.R, BackgroundColor.G, BackgroundColor.B, 255);
 	SDL_RenderClear(Renderer);
 
-	auto FullChildren = GAME_SceneCore::Get().CurrentScene->GetFullChildren();
+	auto FullChildren = GAME_SceneCore::Get().CurrentOrigin->GetFullChildren();
 	for (GAME_Node* node : FullChildren) {
 
 		node->_Draw(Renderer);
