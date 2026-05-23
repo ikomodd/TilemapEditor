@@ -1,6 +1,8 @@
 #include "DisplayCore.h"
 
 #include "../Origin/Scene/SceneCore.h"
+#include "../Origin/Interface/InterfaceCore.h"
+
 #include "../../Node/Node.h"
 #include "../../Node/Origin/Origin.h"
 
@@ -34,8 +36,13 @@ void GAME_DisplayCore::_Process(float delta) {
 	SDL_SetRenderDrawColor(Renderer, BackgroundColor.R, BackgroundColor.G, BackgroundColor.B, 255);
 	SDL_RenderClear(Renderer);
 
-	auto FullChildren = GAME_SceneCore::Get().CurrentOrigin->GetFullChildren();
-	for (GAME_Node* node : FullChildren) {
+	auto FullInterfaceChildren = GAME_InterfaceCore::Get().CurrentOrigin->GetFullChildren();
+	auto FullSceneChildren = GAME_SceneCore::Get().CurrentOrigin->GetFullChildren();
+
+	std::vector<GAME_Node*> AllNodes = FullInterfaceChildren;
+	AllNodes.insert(AllNodes.end(), FullSceneChildren.begin(), FullSceneChildren.end());
+
+	for (GAME_Node* node : AllNodes) {
 
 		node->_Draw(Renderer);
 	}

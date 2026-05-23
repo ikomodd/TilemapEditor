@@ -81,8 +81,16 @@ void GAME_Tilemap::_Event(SDL_Event& event) {
 
 		if (event.button.button == SDL_BUTTON_LEFT) {
 
-			DrawLine(PrevMousePosition, MousePosition);
-			Drawing = true;
+			if (PreTilemap.size() > 0) {
+				PreTilemap.clear();
+
+				Erasing = false;
+			}
+			else {
+
+				DrawLine(PrevMousePosition, MousePosition);
+				Drawing = true;
+			}
 		}
 
 		else if (event.button.button == SDL_BUTTON_RIGHT) {

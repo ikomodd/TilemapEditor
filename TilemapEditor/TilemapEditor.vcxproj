@@ -131,7 +131,9 @@
     <ClCompile Include="DataModels\Vector2\Vector2.cpp" />
     <ClCompile Include="Inheritance\Children\Children.cpp" />
     <ClCompile Include="Inheritance\SpriteData\SpriteData.cpp" />
-    <ClCompile Include="Inheritance\Transform\Transform.cpp" />
+    <ClCompile Include="Inheritance\Transform\WorldTransform\WorldTransform.cpp" />
+    <ClCompile Include="Inheritance\Transform\UiTransform\UiTransform.cpp" />
+    <ClCompile Include="Interface\Editor\EditorInterface.cpp" />
     <ClCompile Include="Node\Camera2D\Camera2D.cpp" />
     <ClCompile Include="Node\Origin\Origin.cpp" />
     <ClCompile Include="Node\Sprite2D\Sprite2D.cpp" />
@@ -151,8 +153,11 @@
     <ClInclude Include="Inheritance\Children\Children.h" />
     <ClInclude Include="Inheritance\SpriteData\SpriteData.h" />
     <ClInclude Include="Inheritance\Transform\Transform.h" />
+    <ClInclude Include="Inheritance\Transform\WorldTransform\WorldTransform.h" />
+    <ClInclude Include="Inheritance\Transform\UiTransform\UiTransform.h" />
     <ClInclude Include="Interface\Editor\EditorInterface.h" />
     <ClInclude Include="Node\Camera2D\Camera2D.h" />
+    <ClInclude Include="Node\Frame2D\Frame2D.h" />
     <ClInclude Include="Node\Node.h" />
     <ClInclude Include="Node\Node2D\Node2D.h" />
     <ClInclude Include="Node\Origin\Origin.h" />

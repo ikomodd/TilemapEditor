@@ -42,9 +42,9 @@ void GAME_GameCore::_Process(float delta) {
 
 		node->_Process(0);
 
-		auto* Node2D = dynamic_cast<GAME_Node2D*>(node);
+		auto* Node2D = dynamic_cast<GAME_Transform*>(node);
 		if (Node2D)
-			Node2D->UpdateLocalPosition();
+			Node2D->UpdateTransform();
 	}
 }
 

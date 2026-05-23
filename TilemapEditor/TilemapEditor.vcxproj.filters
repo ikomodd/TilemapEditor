@@ -33,7 +33,7 @@
     <ClCompile Include="Scenes\Editor\EditorScene.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Inheritance\Transform\Transform.cpp">
+    <ClCompile Include="Inheritance\Transform\WorldTransform\WorldTransform.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Singleton\Asset\AssetCore.cpp">
@@ -55,6 +55,12 @@
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Singleton\Origin\OriginCore.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Inheritance\Transform\UiTransform\UiTransform.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Interface\Editor\EditorInterface.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
@@ -89,7 +95,7 @@
     <ClInclude Include="Scenes\Editor\EditorScene.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Inheritance\Transform\Transform.h">
+    <ClInclude Include="Inheritance\Transform\WorldTransform\WorldTransform.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Singleton\Asset\AssetCore.h">
@@ -123,6 +129,15 @@
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Interface\Editor\EditorInterface.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Node\Frame2D\Frame2D.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Inheritance\Transform\UiTransform\UiTransform.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Inheritance\Transform\Transform.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>
