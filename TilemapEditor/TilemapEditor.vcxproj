@@ -136,6 +136,7 @@
     <ClCompile Include="Interface\Editor\EditorInterface.cpp" />
     <ClCompile Include="Node\Camera2D\Camera2D.cpp" />
     <ClCompile Include="Node\Frame2D\Panel2D\Panel2D.cpp" />
+    <ClCompile Include="Node\Frame2D\TextLabel2D\TextLabel2D.cpp" />
     <ClCompile Include="Node\Origin\Origin.cpp" />
     <ClCompile Include="Node\Sprite2D\Sprite2D.cpp" />
     <ClCompile Include="Scenes\Editor\EditorScene.cpp" />
@@ -147,12 +148,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\OnlineGame\OnlineGame\KMD\DataModels\ivector2.h" />
+    <ClInclude Include="..\..\OnlineGame\OnlineGame\KMD\Event\Event.h" />
     <ClInclude Include="Actor\Tilemap\Tilemap.h" />
     <ClInclude Include="DataModels\Color\Color4.h" />
     <ClInclude Include="DataModels\Vector2\iVector2.h" />
     <ClInclude Include="DataModels\Vector2\Vector2.h" />
     <ClInclude Include="Inheritance\Children\Children.h" />
     <ClInclude Include="Inheritance\SpriteData\SpriteData.h" />
+    <ClInclude Include="Inheritance\TextData\TextData.h" />
     <ClInclude Include="Inheritance\Transform\Transform.h" />
     <ClInclude Include="Inheritance\Transform\WorldTransform\WorldTransform.h" />
     <ClInclude Include="Inheritance\Transform\UiTransform\UiTransform.h" />
@@ -160,6 +163,7 @@
     <ClInclude Include="Node\Camera2D\Camera2D.h" />
     <ClInclude Include="Node\Frame2D\Frame2D.h" />
     <ClInclude Include="Node\Frame2D\Panel2D\Panel2D.h" />
+    <ClInclude Include="Node\Frame2D\TextLabel2D\TextLabel2D.h" />
     <ClInclude Include="Node\Node.h" />
     <ClInclude Include="Node\Node2D\Node2D.h" />
     <ClInclude Include="Node\Origin\Origin.h" />
@@ -172,6 +176,7 @@
     <ClInclude Include="Singleton\Origin\OriginCore.h" />
     <ClInclude Include="Singleton\Singleton.h" />
     <ClInclude Include="Singleton\Origin\Scene\SceneCore.h" />
+    <ClInclude Include="Utility\Event\Event.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

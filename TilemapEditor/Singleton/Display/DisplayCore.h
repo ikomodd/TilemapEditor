@@ -6,6 +6,7 @@
 
 #include "../../DataModels/Vector2/Vector2.h"
 #include "../../DataModels/Color/Color4.h"
+#include "../../Utility/Event/Event.h"
 
 class GAME_Camera2D;
 
@@ -22,6 +23,8 @@ public:
 	vector2 WindowSize;
 
 	bool Fullscreen = false;
+
+	GAME_Event<vector2> WindowResized;
 
 private:
 

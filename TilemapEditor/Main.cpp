@@ -1,18 +1,27 @@
+#include <SDL3/SDL.h>
+#include <SDL3_ttf/SDL_ttf.h>
+
 #include "Singleton/Game/GameCore.h"
 #include "Singleton/Display/DisplayCore.h"
 
 #include "Singleton/Origin/Scene/SceneCore.h"
 #include "Singleton/Origin/Interface/InterfaceCore.h"
 
+#include "Singleton/Asset/AssetCore.h"
+
 #include "Scenes/Editor/EditorScene.h"
 #include "Interface/Editor/EditorInterface.h"
 
 int main() {
 
+	SDL_Init(SDL_INIT_VIDEO);
+	TTF_Init();
+
 	auto& Game = GAME_GameCore::Get();
 	auto& Scenes = GAME_SceneCore::Get();
 	auto& Interface = GAME_InterfaceCore::Get();
 	GAME_DisplayCore::Get();
+	GAME_AssetCore::Get();
 
 	CORE_iSingleton::InitAll();
 

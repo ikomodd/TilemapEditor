@@ -27,8 +27,11 @@ void GAME_DisplayCore::_Init() {
 
 void GAME_DisplayCore::_Event(SDL_Event& event) {
 
-	if (event.type == SDL_EVENT_WINDOW_RESIZED)
+	if (event.type == SDL_EVENT_WINDOW_RESIZED) {
 		ConfigureWindowSize();
+
+		WindowResized.Invoke(WindowSize);
+	}
 
 	else if (event.type == SDL_EVENT_KEY_DOWN) {
 
@@ -41,7 +44,7 @@ void GAME_DisplayCore::_Event(SDL_Event& event) {
 }
 
 void GAME_DisplayCore::_Process(float delta) {
-
+	
 	SDL_SetRenderDrawColor(Renderer, BackgroundColor.R, BackgroundColor.G, BackgroundColor.B, 255);
 	SDL_RenderClear(Renderer);
 
