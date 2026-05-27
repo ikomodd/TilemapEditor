@@ -28,38 +28,22 @@ protected:
 
 public:
 
-	GAME_TextData(std::string font_path, float scale) {
+	enum FRAME_VerticalAlign {
 
-		ChangeFont(font_path, scale);
-	}
+		VERTICAL_ALIGN_TOP,
+		VERTICAL_ALIGN_CENTER,
+		VERTICAL_ALIGN_BOTTOM,
+	};
 
-	void ChangeText(std::string text) {
+	enum FRAME_HorizontalAlign {
 
-		auto& Display = GAME_DisplayCore::Get();
+		HORIZONTAL_ALIGN_LEFT,
+		HORIZONTAL_ALIGN_CENTER,
+		HORIZONTAL_ALIGN_RIGHT,
+	};
 
-		if (TextSurface)
-			SDL_DestroySurface(TextSurface);
-		if (TextTexture)
-			SDL_DestroyTexture(TextTexture);
+	GAME_TextData(std::string font_path, float scale);
 
-		TextSurface = TTF_RenderText_Blended(Font, text.c_str(), 0, SDL_Color(Color.R, Color.G, Color.B, Color.A));
-		TextTexture = SDL_CreateTextureFromSurface(Display.Renderer, TextSurface);
-
-		Text = text;
-	}
-
-	void ChangeFont(std::string font_path, float scale) {
-
-		auto* FontAsset = GAME_AssetCore::Get().GetItem<ASSET_FontSource>(font_path, scale);
-
-		if (FontAsset) {
-			Font = FontAsset->Font;
-
-			FontPath = font_path;
-			FontScale = scale;
-
-			if (!Text.empty())
-				ChangeText(Text);
-		}
-	}
+	void ChangeText(std::string text);
+	void ChangeFont(std::string font_path, float scale);
 };

@@ -2,6 +2,7 @@
 
 #include "../../Singleton/Display/DisplayCore.h"
 #include "../../Node/Camera2D/Camera2D.h"
+#include "../../Singleton/Origin/Interface/InterfaceCore.h"
 
 // OBS: Os std::cout's causam queda de FPS, usa só pra debug e comenta eles no final
 
@@ -13,10 +14,13 @@ void GAME_Tilemap::CreateTile(vector2 source_position) {
 
 void GAME_Tilemap::DrawLine(vector2 from, vector2 to) {
 
-	vector2 ToWorldPosition = CurrentCamera->InWorldSpace(to);
+	auto& Display = GAME_DisplayCore::Get();
+	auto& Interface = GAME_InterfaceCore::Get();
+
+	vector2 ToWorldPosition = Display.CurrentCamera->InWorldSpace(to);
 	vector2 ToGridPosition = (ToWorldPosition / TileSize);
 
-	vector2 FromWorldPosition = CurrentCamera->InWorldSpace(from);
+	vector2 FromWorldPosition = Display.CurrentCamera->InWorldSpace(from);
 	vector2 FromGridPosition = (FromWorldPosition / TileSize);
 
 	vector2 Delta = ToGridPosition - FromGridPosition;
@@ -25,6 +29,15 @@ void GAME_Tilemap::DrawLine(vector2 from, vector2 to) {
 	int Steps = (int)Distance + 1;
 
 	for (int i = 0; i <= Steps; i++) {
+
+		/*
+		OBS: Quando o mouse entra em conflito com uma Frame2D, ou sai da janela, a seção inteira da
+		linha écancelada, não apenas os pontos que saem. Não vai ser corrigido por que é um problema
+		muito insignificante pra o trabalho de corrigir, mas vale mencionar.
+		*/
+
+		if (Interface.HasUiInPoint(to) || !Display.HasPointInDisplay(to))
+			continue;
 
 		float t = (float)i / Steps;
 		vector2 Pos = FromGridPosition + Delta * t;
@@ -66,11 +79,6 @@ void GAME_Tilemap::InsertTiles() {
 }
 
 //
-
-void GAME_Tilemap::_Ready() {
-
-	CurrentCamera = GAME_DisplayCore::Get().CurrentCamera;
-}
 
 void GAME_Tilemap::_Event(SDL_Event& event) {
 

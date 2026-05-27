@@ -33,6 +33,12 @@ private:
 
 	void ConfigureWindowSize();
 
+public:
+
+	bool HasPointInDisplay(vector2 position);
+
+private:
+
 	void _Init() override;
 	void _Event(SDL_Event& event) override;
 	void _Process(float delta) override;

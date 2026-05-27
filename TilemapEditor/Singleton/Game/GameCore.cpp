@@ -6,7 +6,9 @@
 
 #include "../../Node/Origin/Origin.h"
 #include "../../Node/Node.h"
+
 #include "../../Node/Node2D/Node2D.h"
+#include "../../Node/Frame2D/Frame2D.h"
 
 void GAME_GameCore::_Init() {
 
@@ -25,6 +27,8 @@ void GAME_GameCore::_Event(SDL_Event& event) {
 	AllNodes.insert(AllNodes.end(), FullSceneChildren.begin(), FullSceneChildren.end());
 
 	for (GAME_Node* node : AllNodes) {
+
+
 
 		node->_Event(event);
 	}

@@ -7,8 +7,6 @@
 
 #include "../../DataModels/Vector2/iVector2.h"
 
-class GAME_Camera2D;
-
 struct TILEMAP_Tile {
 private:
 
@@ -26,8 +24,6 @@ public:
 
 class GAME_Tilemap : public GAME_Node, public GAME_SpriteData {
 private:
-
-	GAME_Camera2D* CurrentCamera = nullptr;
 
 	bool Drawing = false;
 	bool Erasing = false;
@@ -56,7 +52,7 @@ public:
 
 	//
 
-	void _Ready() override;
+	//void _Ready() override;
 	void _Event(SDL_Event& event) override;
 	void _Draw(SDL_Renderer* renderer) override;
 	void _Process(float delta) override;

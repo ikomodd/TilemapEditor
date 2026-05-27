@@ -15,6 +15,11 @@ void GAME_DisplayCore::ConfigureWindowSize() {
 	WindowSize = iWindowSize.ToVector2();
 }
 
+bool GAME_DisplayCore::HasPointInDisplay(vector2 position) {
+
+	return position.X >= 0.0f && position.Y >= 0.0f && position.X <= WindowSize.X && position.Y <= WindowSize.Y;
+}
+
 //
 
 void GAME_DisplayCore::_Init() {

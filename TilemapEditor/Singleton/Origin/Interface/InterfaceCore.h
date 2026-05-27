@@ -2,6 +2,8 @@
 
 #include "../OriginCore.h"
 
+struct vector2;
+
 class GAME_InterfaceCore : public GAME_OriginCore, public CORE_Singleton<GAME_InterfaceCore> {
 private:
 
@@ -12,4 +14,8 @@ private:
 
 		UpdateOrigin();
 	}
+
+public:
+
+	bool HasUiInPoint(vector2 position);
 };
