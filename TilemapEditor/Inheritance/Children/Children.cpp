@@ -24,6 +24,8 @@ void GAME_Children::AddNode(GAME_Node* node) {
 
 		if (GAME_SceneCore::Get().CurrentOrigin->Initialized)
 			node->_Ready();
+
+		_NodeAdded(node);
 	}
 	else
 		std::cerr << "[CHILDREN] Node: " << node->Name << " ja esta em uma familia e nao pode ser adicionado em: " << Owner->Name << "\n";
@@ -34,6 +36,8 @@ void GAME_Children::RemoveNode(GAME_Node* node) {
 	if (HasNode(node->Name)) {
 
 		Children.erase(Children.begin() + GetNodeIndex(node->Name));
+
+		_NodeRemoved(node);
 	}
 }
 

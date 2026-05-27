@@ -5,6 +5,8 @@
 class GAME_UiTransform : public GAME_Transform{
 public:
 
+	bool ControledByAnother = false;
+
 	vector2 Anchor;
 
 	vector2 GlobalPosition;

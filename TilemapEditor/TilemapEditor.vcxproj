@@ -137,6 +137,7 @@
     <ClCompile Include="Interface\Editor\EditorInterface.cpp" />
     <ClCompile Include="Node\Camera2D\Camera2D.cpp" />
     <ClCompile Include="Node\Frame2D\Button2D\Button.cpp" />
+    <ClCompile Include="Node\Frame2D\Container2D\Container2D.cpp" />
     <ClCompile Include="Node\Frame2D\Panel2D\Panel2D.cpp" />
     <ClCompile Include="Node\Frame2D\TextLabel2D\TextLabel2D.cpp" />
     <ClCompile Include="Node\Origin\Origin.cpp" />
@@ -165,6 +166,7 @@
     <ClInclude Include="Interface\Editor\EditorInterface.h" />
     <ClInclude Include="Node\Camera2D\Camera2D.h" />
     <ClInclude Include="Node\Frame2D\Button2D\Button.h" />
+    <ClInclude Include="Node\Frame2D\Container2D\Container2D.h" />
     <ClInclude Include="Node\Frame2D\Frame2D.h" />
     <ClInclude Include="Node\Frame2D\Panel2D\Panel2D.h" />
     <ClInclude Include="Node\Frame2D\TextLabel2D\TextLabel2D.h" />

@@ -38,6 +38,15 @@ public:
 		return nullptr;
 	}
 
+	template <typename T>
+	T* GetNodeFromIndex(size_t index) {
+
+		return static_cast<T*>(Children[index]);
+	}
+
+	virtual void _NodeAdded(GAME_Node* node) {}
+	virtual void _NodeRemoved(GAME_Node* node) {}
+
 private:
 
 	GAME_Node* GetPureNode(std::string node_name);

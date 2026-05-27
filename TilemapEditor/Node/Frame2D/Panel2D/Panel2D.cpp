@@ -4,10 +4,8 @@ void GAME_Panel2D::_Draw(SDL_Renderer* renderer) {
 
 	SDL_FRect Rect = { GlobalPosition.X, GlobalPosition.Y, GlobalSize.X, GlobalSize.Y };
 
-	if (!Texture) {
-		SDL_SetRenderDrawColor(renderer, SolidColor.R, SolidColor.G, SolidColor.B, SolidColor.A);
-		SDL_RenderFillRect(renderer, &Rect);
-	}
+	SDL_SetRenderDrawColor(renderer, SolidColor.R, SolidColor.G, SolidColor.B, SolidColor.A);
+	SDL_RenderFillRect(renderer, &Rect);
 
 	if (BorderColor.A > 0 && BorderSize > 0) {
 		SDL_SetRenderDrawColor(renderer, BorderColor.R, BorderColor.G, BorderColor.B, BorderColor.A);
