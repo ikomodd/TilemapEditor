@@ -22,7 +22,7 @@ void GAME_Children::AddNode(GAME_Node* node) {
 		Children.push_back(node);
 		node->Parent = Owner;
 
-		if (GAME_SceneCore::Get().CurrentOrigin->Initialized)
+		if (node->GetOrigin()->Initialized)
 			node->_Ready();
 
 		_NodeAdded(node);
@@ -72,6 +72,15 @@ std::vector<GAME_Node*> GAME_Children::GetFullChildren() {
 		Result.insert(Result.end(), Current.begin(), Current.end());
 	}
 	return Result;
+}
+
+GAME_Origin* GAME_Children::GetOrigin() {
+
+	auto* ParentOrigin = dynamic_cast<GAME_Origin*>(Parent);
+
+	if (ParentOrigin) return ParentOrigin;
+	else
+		return Parent->GetOrigin();
 }
 
 GAME_Node* GAME_Children::GetPureNode(std::string node_name) {

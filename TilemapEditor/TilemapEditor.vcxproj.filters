@@ -179,5 +179,11 @@
     <ClInclude Include="Node\Frame2D\Container2D\Container2D.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
+    <ClInclude Include="Actor\EditorContainer\EditorContainer.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor\UpperContainer\UpperContainer.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

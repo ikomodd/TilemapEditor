@@ -153,7 +153,9 @@
   <ItemGroup>
     <ClInclude Include="..\..\OnlineGame\OnlineGame\KMD\DataModels\ivector2.h" />
     <ClInclude Include="..\..\OnlineGame\OnlineGame\KMD\Event\Event.h" />
+    <ClInclude Include="Actor\EditorContainer\EditorContainer.h" />
     <ClInclude Include="Actor\Tilemap\Tilemap.h" />
+    <ClInclude Include="Actor\UpperContainer\UpperContainer.h" />
     <ClInclude Include="DataModels\Color\Color4.h" />
     <ClInclude Include="DataModels\Vector2\iVector2.h" />
     <ClInclude Include="DataModels\Vector2\Vector2.h" />

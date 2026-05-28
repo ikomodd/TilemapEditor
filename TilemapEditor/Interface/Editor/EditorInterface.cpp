@@ -5,14 +5,17 @@
 #include "../../Node/Frame2D/Button2D/Button.h"
 #include "../../Node/Frame2D/Container2D/Container2D.h"
 
+#include "../../Actor/EditorContainer/EditorContainer.h"
+#include "../../Actor/UpperContainer/UpperContainer.h"
+
 void GAME_EditorInterface::_Ready() {
 
-	auto* Container = new GAME_Container2D("container", 0, vector2(0.2f, 1.f), 0);
-	AddNode(Container);
+	auto* UpperContainer = new GAME_UpperContainer();
+	AddNode(UpperContainer);
 
-	auto* Frame1 = new GAME_Panel2D("frame", 0, vector2(0.2f, 0.2f), 0);
-	Container->AddNode(Frame1);
+	auto* TilemapContainer = new GAME_EditorContainer("tilemap_container", "Tilemap", vector2(1.f, 0.04f), vector2(0.2f, 0.48f), vector2(-1.f, 0.f));
+	AddNode(TilemapContainer);
 
-	auto* Frame2 = new GAME_Panel2D("frame", 0, vector2(0.2f, 0.1f), 0);
-	Container->AddNode(Frame2);
+	auto* PropertiesContainer = new GAME_EditorContainer("properties_container", "Properties", vector2(1.f, 0.5f), vector2(0.2f, 0.5f), vector2(-1.f, 0.f));
+	AddNode(PropertiesContainer);
 }

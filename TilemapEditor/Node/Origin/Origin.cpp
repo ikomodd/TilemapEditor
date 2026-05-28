@@ -1,6 +1,7 @@
 #include "Origin.h"
 
 void GAME_Origin::Initialize() {
+
 	Initialized = true;
 
 	for (GAME_Node* node : GetChildren()) {

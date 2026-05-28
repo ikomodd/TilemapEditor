@@ -4,6 +4,7 @@
 #include <vector>
 
 class GAME_Node;
+class GAME_Origin;
 
 class GAME_Children {
 private:
@@ -28,6 +29,10 @@ public:
 
 	std::vector <GAME_Node*> GetFullChildren();
 
+	GAME_Origin* GetOrigin();
+
+	//
+
 	template <typename T>
 	T* GetNode(std::string node_name) {
 
@@ -43,6 +48,8 @@ public:
 
 		return static_cast<T*>(Children[index]);
 	}
+
+	//
 
 	virtual void _NodeAdded(GAME_Node* node) {}
 	virtual void _NodeRemoved(GAME_Node* node) {}

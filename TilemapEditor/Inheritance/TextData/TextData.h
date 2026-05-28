@@ -13,7 +13,7 @@ class GAME_TextData {
 private:
 
 	std::string Text = "";
-
+	
 	TTF_Font* Font = nullptr;
 
 protected:
@@ -44,6 +44,6 @@ public:
 
 	GAME_TextData(std::string font_path, float scale);
 
-	void ChangeText(std::string text);
+	void ChangeText(std::string text, color4 color);
 	void ChangeFont(std::string font_path, float scale);
 };
