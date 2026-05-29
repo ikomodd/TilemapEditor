@@ -128,6 +128,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Actor\Tilemap\Tilemap.cpp" />
+    <ClCompile Include="Actor\UpperContainer\Buttons.cpp" />
+    <ClCompile Include="Actor\UpperContainer\UpperContainer.cpp" />
     <ClCompile Include="DataModels\Vector2\Vector2.cpp" />
     <ClCompile Include="Inheritance\Children\Children.cpp" />
     <ClCompile Include="Inheritance\SpriteData\SpriteData.cpp" />
@@ -153,6 +155,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\OnlineGame\OnlineGame\KMD\DataModels\ivector2.h" />
     <ClInclude Include="..\..\OnlineGame\OnlineGame\KMD\Event\Event.h" />
+    <ClInclude Include="Actor\ContextContainer\ContextContainer.h" />
     <ClInclude Include="Actor\EditorContainer\EditorContainer.h" />
     <ClInclude Include="Actor\Tilemap\Tilemap.h" />
     <ClInclude Include="Actor\UpperContainer\UpperContainer.h" />

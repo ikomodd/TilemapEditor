@@ -14,7 +14,7 @@ void GAME_Button2D::_Event(SDL_Event& event) {
 		SolidColor += 40;
 
 		_Clicked();
-		OnClicked.Invoke();
+		OnClicked.Invoke(event);
 	}
 
 	else if (event.type == SDL_EVENT_MOUSE_MOTION) {
